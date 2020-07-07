@@ -95,7 +95,7 @@ namespace LongviewAutomation
             driver.FindElement(By.Id("1")).Click();
             Thread.Sleep(3000);
         }
-        [TestCase, Order(3)]
+        [TestCase, Order(2)]
         public void TestMethod2()
         {
             driver.FindElement(By.Id("59648")).Click();
@@ -111,12 +111,12 @@ namespace LongviewAutomation
 
             ExcelUtil.PopulateInCollection(myFile.FullName);
         }
-        [TestCase, Order(4)]
+        [TestCase, Order(3)]
         public void TestMethod3()
         {
             Assert.AreEqual("100,00000000", ExcelUtil.ReadData(16, "Model Percent"));
         }
-        [TestCase, Order(5)]
+        [TestCase, Order(4)]
         public void TestMethod4()
         {
             Assert.AreEqual("100", ExcelUtil.ReadData(13, "Model Percent"));
