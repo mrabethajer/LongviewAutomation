@@ -78,7 +78,7 @@ namespace LongviewAutomation
             Thread.Sleep(5000);
 
             driver.FindElement(By.Name("OK")).Click();
-            Thread.Sleep(40000);
+            Thread.Sleep(70000);
         }
         
         [TestCase, Order(1)]
