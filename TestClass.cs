@@ -20,7 +20,7 @@ namespace LongviewAutomation
         public IWebDriver driver = null;
         public ExtentReports extent;
         ExtentTest test = null;
-
+    
         [OneTimeSetUp]
         public void extentStart()
         {
@@ -59,7 +59,7 @@ namespace LongviewAutomation
 
 
         [TestCase,Order(0)]
-        public void TestMethod()
+        public void Login()
         {
             JSONReader jsonRead = new JSONReader();
             test = extent.CreateTest("Test1").Info("test started");
@@ -83,7 +83,7 @@ namespace LongviewAutomation
         
         [TestCase, Order(1)]
        
-        public void TestMethod1()
+        public void OpenApparaisal()
         {
             driver.FindElement(By.Id("59419")).FindElement(By.ClassName("XTPToolBar")).Click();
             driver.FindElement(By.Name("File")).Click();
@@ -96,12 +96,13 @@ namespace LongviewAutomation
             Thread.Sleep(3000);
         }
         [TestCase, Order(2)]
-        public void TestMethod2()
+        public void ExportReport()
         {
             driver.FindElement(By.Id("59648")).Click();
             driver.FindElement(By.Name("File")).Click();
             driver.FindElement(By.Name("Export")).Click();
             driver.FindElement(By.Name("Report To Excel")).Click();
+            
             Thread.Sleep(40000);
 
             var directory = new DirectoryInfo(@"C:/Users/hamrabet/Documents/");
@@ -112,12 +113,12 @@ namespace LongviewAutomation
             ExcelUtil.PopulateInCollection(myFile.FullName);
         }
         [TestCase, Order(3)]
-        public void TestMethod3()
+        public void CheckValue1()
         {
             Assert.AreEqual("100,00000000", ExcelUtil.ReadData(16, "Model Percent"));
         }
         [TestCase, Order(4)]
-        public void TestMethod4()
+        public void CheckValue2()
         {
             Assert.AreEqual("100", ExcelUtil.ReadData(13, "Model Percent"));
         }
