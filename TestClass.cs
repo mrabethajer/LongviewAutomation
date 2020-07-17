@@ -120,7 +120,7 @@ namespace LongviewAutomation
         [TestCase, Order(4)]
         public void CheckValue2()
         {
-            Assert.AreEqual("100", ExcelUtil.ReadData(13, "Model Percent"));
+            Assert.AreEqual("100,00000000", ExcelUtil.ReadData(13, "Model Percent"));
         }
     }
 }
